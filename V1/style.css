@@ -1,0 +1,284 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::-moz-selection {
+  background-color: #008a8a;
+}
+
+::selection {
+  background-color: #008a8a;
+}
+
+:root {
+  --navTran: 0.4s cubic-bezier(0, 0.7, 0.27, 0.98);
+}
+
+body {
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+  position: relative;
+  height: 300vh;
+  -webkit-transition: opacity 0.5s cubic-bezier(0.02, 0.68, 0.4, 1.01);
+  transition: opacity 0.5s cubic-bezier(0.02, 0.68, 0.4, 1.01);
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Montserrat, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 64em) {
+  html {
+    font-size: 56%;
+  }
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+.nav {
+  width: 1024px;
+  height: 5rem;
+  background: #f5f5f5cc;
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+  -webkit-box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: 4rem;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 4rem, 0);
+          transform: translate3d(-50%, 4rem, 0);
+  z-index: 2000;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 64em) {
+  .nav {
+    width: 100vw;
+    height: 7rem;
+    border-radius: 0 0 2rem 2rem;
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.nav .links-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3rem;
+  pointer-events: none;
+}
+
+.nav .links-wrapper > * {
+  pointer-events: all;
+}
+
+@media only screen and (max-width: 64em) {
+  .nav .links-wrapper {
+    height: 7rem;
+    padding: 0 5vw;
+  }
+}
+
+.nav .links-wrapper .logo {
+  width: 12rem;
+  height: 100%;
+  margin-right: auto;
+}
+
+.nav .links-wrapper .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.nav .links-wrapper .link_l1 {
+  padding: 0 1rem;
+  height: 100%;
+  background: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.nav .links-wrapper .link_l1.active {
+  color: blue;
+}
+
+@media only screen and (max-width: 64em) {
+  .nav .links-wrapper .link_l1 {
+    position: absolute;
+  }
+}
+
+.nav .links-wrapper .account,
+.nav .links-wrapper .search,
+.nav .links-wrapper .cart,
+.nav .links-wrapper .hamburger,
+.nav .links-wrapper .close {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 4rem;
+  font-size: 1.8rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.nav .links-wrapper .account:hover, .nav .links-wrapper .account:active,
+.nav .links-wrapper .search:hover,
+.nav .links-wrapper .search:active,
+.nav .links-wrapper .cart:hover,
+.nav .links-wrapper .cart:active,
+.nav .links-wrapper .hamburger:hover,
+.nav .links-wrapper .hamburger:active,
+.nav .links-wrapper .close:hover,
+.nav .links-wrapper .close:active {
+  background: rgba(0, 0, 0, 0.193);
+}
+
+.nav .links-wrapper .account:active,
+.nav .links-wrapper .search:active,
+.nav .links-wrapper .cart:active,
+.nav .links-wrapper .hamburger:active,
+.nav .links-wrapper .close:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+@media only screen and (max-width: 64em) {
+  .nav .links-wrapper .account,
+  .nav .links-wrapper .search,
+  .nav .links-wrapper .cart,
+  .nav .links-wrapper .hamburger,
+  .nav .links-wrapper .close {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2.2rem;
+  }
+}
+
+.nav .links-wrapper .account {
+  margin-left: auto;
+}
+
+.nav .links-wrapper .close {
+  display: none;
+}
+
+@media only screen and (min-width: 64em) {
+  .nav .links-wrapper .hamburger,
+  .nav .links-wrapper .close {
+    display: none;
+  }
+}
+
+.nav .box-wrapper {
+  width: 100%;
+  height: 100%;
+  border: 4px solid yellowgreen;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 64em) {
+  .nav .box-wrapper {
+    height: calc(100% - 7rem);
+  }
+}
+
+.nav .box-wrapper .link_l1-box,
+.nav .box-wrapper .account-box,
+.nav .box-wrapper .search-box,
+.nav .box-wrapper .cart-box {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav .box-wrapper .link_l1-box.active,
+.nav .box-wrapper .account-box.active,
+.nav .box-wrapper .search-box.active,
+.nav .box-wrapper .cart-box.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav .box-wrapper .link_l1-box {
+  background: red;
+}
+
+.nav .box-wrapper .account-box {
+  background: cadetblue;
+}
+
+.nav .box-wrapper .search-box {
+  background: royalblue;
+}
+
+.nav .box-wrapper .cart-box {
+  background: #1c1b55;
+}
+
+@media only screen and (max-width: 64em) {
+  .cart {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    -webkit-transform: translate(-5vw, -5vw);
+            transform: translate(-5vw, -5vw);
+    width: 7rem;
+    height: 7rem;
+    border-radius: 7rem;
+    font-size: 2rem;
+    background: red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.05), -1rem -1rem 2rem rgba(255, 255, 255, 0.05);
+            box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.05), -1rem -1rem 2rem rgba(255, 255, 255, 0.05);
+  }
+}
+
+img {
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=style.css.map */

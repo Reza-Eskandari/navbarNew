@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.min.js"
+      defer
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+    ></script>
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <!-- //////////////////////////////////////////// -->
+      <div class="links-wrapper">
+        <div class="logo">
+          <img
+            src="//cdn.shopify.com/s/files/1/0483/4597/2898/files/ALPHALETE_120x.png?v=1600205087"
+            alt=""
+          />
+        </div>
+
+        <button data-pair="MENS" class="link_l1">MENS</button>
+        <button data-pair="WOMENS" class="link_l1">WOMENS</button>
+        <button data-pair="ACCESSORIES" class="link_l1">ACCESSORIES</button>
+
+        <button data-pair="ACCOUNT" class="account">
+          <i class="account-icon fas fa-user-circle"></i>
+        </button>
+        <button data-pair="SEARCH" class="search">
+          <i class="search-icon fas fa-search"></i>
+        </button>
+        <button class="hamburger">
+          <i class="hamburger-icon fas fa-bars"></i>
+        </button>
+        <button class="close">
+          <i class="close-icon fas fa-times"></i>
+        </button>
+        <button data-pair="CART" class="cart">
+          <i class="cart-icon fas fa-cart-plus"></i>
+        </button>
+      </div>
+      <!-- //////////////////////////////////////////// -->
+      <div class="box-wrapper">
+        <div data-pair="MENS" class="link_l1-box"></div>
+        <div data-pair="WOMENS" class="link_l1-box"></div>
+        <div data-pair="ACCESSORIES" class="link_l1-box"></div>
+        <div data-pair="ACCOUNT" class="account-box"></div>
+        <div data-pair="SEARCH" class="search-box"></div>
+        <div data-pair="CART" class="cart-box"></div>
+      </div>
+      <!-- //////////////////////////////////////////// -->
+    </nav>
+
+    <img
+      src="https://cdn.shopify.com/s/files/1/0483/4597/2898/t/8/assets/atlas_1700x.jpg?v=7436897773121106635"
+      alt=""
+    />
+  </body>
+</html>
