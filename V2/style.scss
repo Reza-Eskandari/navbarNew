@@ -37,12 +37,12 @@
 }
 
 @mixin autoAlpha0 {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 @mixin autoAlpha1 {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 @mixin pointerEventOffNotChildren {
@@ -267,7 +267,7 @@ li {
           @include respond(tab-land) {
             top: 0;
             height: 100%;
-            overflow: auto;
+            // overflow: auto;
             // @include pointerEventOffNotChildren;
           }
 
@@ -306,7 +306,11 @@ li {
               @include autoAlpha0;
               // @include pointerEventOffNotChildren;
               overflow: auto;
-              padding: 50% 0;
+              padding: calc(50vh - 7rem) 0;
+
+              &.lockscroll {
+                overflow: hidden;
+              }
             }
 
             .back-btn {
@@ -457,9 +461,11 @@ li {
         margin-left: auto;
       }
       &.search {
-        &:hover {
-          .search-icon {
-            background: rgba(0, 0, 0, 0.193);
+        @include respond(desktop) {
+          &:hover {
+            .search-icon {
+              background: rgba(0, 0, 0, 0.193);
+            }
           }
         }
         &.active {
@@ -514,6 +520,7 @@ li {
             border: none;
             outline: none;
             background: transparent;
+            font-size: 16px;
           }
           .srch,
           .close-srch {
